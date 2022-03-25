@@ -33,7 +33,10 @@ func main() {
 	}
 	log.Println("Postgres connected")
 
-	cityRepo := author.NewCityRepository(db)
-	cityRepo.Migrations()
-	// cityRepo.InsertSampleData()
+	bookRepo := author.NewBookRepository(db)
+	bookRepo.Migrations()
+	bookRepo.InsertSampleData(books)
+
+	fmt.Println(bookRepo.FindAll())
+
 }

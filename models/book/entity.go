@@ -1,4 +1,4 @@
-package entity
+package author
 
 import (
 	"gorm.io/gorm"
