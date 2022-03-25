@@ -35,7 +35,17 @@ func main() {
 
 	bookRepo := author.NewBookRepository(db)
 	bookRepo.Migrations()
-	bookRepo.InsertSampleData(books)
+	bookRepo.InsertData(books)
+
+	fmt.Println(bookRepo.FindAll())
+
+	fmt.Println(bookRepo.GetByID(3))
+
+	fmt.Println(bookRepo.FindByName("White Fang"))
+
+	fmt.Println(bookRepo.GetBooksWithAuthor("Jack London"))
+
+	//bookRepo.DeleteById(2)
 
 	fmt.Println(bookRepo.FindAll())
 
